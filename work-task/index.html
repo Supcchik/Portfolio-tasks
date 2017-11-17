@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Созвездие инвест</title>
+		<meta name="description" content="Сайт для продвижения IT" />
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="slick.css">
+		<link rel="stylesheet" href="slick-theme.css">
+	</head>
+	<body>
+		  <div class="container demo-1">
+				<div id="large-header" class="large-header">
+					<canvas id="demo-canvas"></canvas>
+					<div class="main-title"><p class="js-text">Ещё полвека назад для людей слова "компьютер", "интернет" и "USB-порт" не значили ничего, 10 лет назад о криптовалютах слышали единицы и не считали их надёжным заработком. Сейчас никто не верит в технологии, которые будут править миром, всего через несколько декад. Мы, компания "Созвездие Инвест", считали, что будущее уже перед нами, и глупо было бы не воспользоваться им. Мы находим молодых новаторов и открываем в них самородков и они становяться нашими сотрудниками, с НИИ для того, чтобы иметь достаток к семьям новых IT- продуктов и технологий мира. Компания "Созвездие Инвест" предлагает и вам сделать вклад в улучшение нашего мира.</p>
+                        <a class="button-link" href="#">Перейти</a>
+					</div>
+					<a class="button" href="#slider"><img src="img/arrow1.png" alt=""></a>
+				</div>
+				<div class="internim">
+					<h2 class="quote">"Компьютер — это самый удивительный инструмент, с каким я когда-либо сталкивался. Это велосипед для нашего сознания."</h2>
+					<h2 class="quote-name"> &copy; Steve Jobs</h2>
+				</div>
+				<div id="slider">
+					<div class="js-slider">
+						<div class=""><img src="img/1.jpg" alt=""></div>
+						<div class=""><img src="img/2.jpg" alt=""></div>
+						<div class=""><img src="img/3.jpg" alt=""></div>
+						<div class=""><img src="img/4.jpg" alt=""></div>
+						<div class=""><img src="img/1.jpg" alt=""></div>
+						<div class=""><img src="img/2.jpg" alt=""></div>
+						<div class=""><img src="img/3.jpg" alt=""></div>
+						<div class=""><img src="img/4.jpg" alt=""></div>
+					</div>
+					<div class="slider-nav">
+						<div class=""><img src="img/1.jpg" alt=""></div>
+						<div class=""><img src="img/2.jpg" alt=""></div>
+						<div class=""><img src="img/3.jpg" alt=""></div>
+						<div class=""><img src="img/4.jpg" alt=""></div>
+						<div class=""><img src="img/1.jpg" alt=""></div>
+						<div class=""><img src="img/2.jpg" alt=""></div>
+						<div class=""><img src="img/3.jpg" alt=""></div>
+						<div class=""><img src="img/4.jpg" alt=""></div>
+					</div>
+				</div>
+				
+				<footer class="footer">
+					<p> &copy; СОЗВЕЗДИЕ ИНВЕСТ 2017</p>
+				</footer>
+		</div>
+		<script src="js/js.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<script type="text/javascript" src="slick.min.js"></script>
+		<script>
+			// $('.js-slider').slick({
+  	// 			infinite: true,
+  	// 			autoplay: true,
+  	// 			autoplaySpeed: 2500,
+  	// 			speed: 500,
+  	// 			fade: true,
+  	// 			cssEase: 'linear',
+			// });
+
+			 $('.js-slider').slick({
+  slidesToShow: 1,
+  slidesToScroll: 3,
+  arrows: false,
+  fade: true,
+  asNavFor: '.slider-nav',
+  autoplay: true,
+  autoplaySpeed: 2000,
+});
+$('.slider-nav').slick({
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  asNavFor: '.js-slider',
+  centerMode: true,
+  focusOnSelect: true
+});
+		</script>
+		<script>
+			$(document).ready(function(){
+	                $(".button").on("click", function (event) {
+		            //отменяем стандартную обработку нажатия по ссылке
+	            	event.preventDefault();
+	            	//забираем идентификатор бока с атрибута href
+	            	var id  = $(this).attr('href'),
+	            	//узнаем высоту от начала страницы до блока на который ссылается якорь
+	            		top = $(id).offset().top;
+		            //анимируем переход на расстояние - top за 1500 мс
+		            $('body,html').animate({scrollTop: top}, 1500);
+	                });
+            });
+		</script>
+		<script type="text/javascript">
+				$(document).ready(function(){
+				 $.fn.animate_Text = function() {
+				  var string = this.text();
+				  return this.each(function(){
+				   var $this = $(this);
+				   $this.html(string.replace(/./g, '<span class="new">$&</span>'));
+				   $this.find('span.new').each(function(i, el){
+				    setTimeout(function(){ $(el).addClass('div_opacity'); }, 50 * i);
+				   });
+				  });
+				 };
+				 $('.js-text').show();
+				 $('.js-text').animate_Text();
+				});
+         </script>
+	</body>
+</html>
